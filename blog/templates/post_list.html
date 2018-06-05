@@ -8,9 +8,13 @@
       </div>
 
       <div>
-          <p>published: 14.06.2014, 12:14</p>
-          <h2><a href="">My first post</a></h2>
-          <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam vestibulum. Donec id elit non me porta gravida at eget metud.</p>
+        {% for post in posts %}
+          <div>
+            <p>published: {{post.published_date}}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
       </div>
 
       <div>
